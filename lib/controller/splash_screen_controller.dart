@@ -9,4 +9,5 @@ class SplashScreenController extends GetxController {
         .then((value) => Get.off(() => SlidePage1()));
     super.onInit();
   }
+  
 }

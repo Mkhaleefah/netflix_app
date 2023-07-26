@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intro_slider/intro_slider.dart';
+import 'package:netflix_uiapp/pages/login_page.dart';
 
 class SlidePage1 extends StatelessWidget {
   // const SlidePage1({super.key});
@@ -26,7 +27,7 @@ class SlidePage1 extends StatelessWidget {
       ),
     ),
     Slide(
-      title: 'Watch on any device',
+      //  title: 'Watch on any device',
       maxLineTextDescription: 3,
       widgetDescription: Column(
         children: [
@@ -35,6 +36,13 @@ class SlidePage1 extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
+            ),
+          ),
+          Text(
+            'dont know the code',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
             ),
           ),
           Text(
@@ -72,7 +80,7 @@ class SlidePage1 extends StatelessWidget {
         style: TextStyle(color: Colors.amber, fontSize: 60),
       ),
       pathImage:
-          'assets/images/sildepage3 .png', // Use 'pathImage' instead of 'imageUrl'
+          'assets/images/sildepage3.png', // Use 'pathImage' instead of 'imageUrl'
       backgroundColor: Colors.black,
       styleTitle: GoogleFonts.lato(
         color: Colors.white,
@@ -132,13 +140,19 @@ class SlidePage1 extends StatelessWidget {
         child: IntroSlider(
           slides: slides,
           renderNextBtn: Icon(Icons.arrow_forward, color: Colors.white),
-          renderDoneBtn: Icon(Icons.more_horiz, color: Colors.white),
+          renderDoneBtn: Icon(Icons.done, color: Colors.white),
 
           // Customize the appearance of navigation buttons if needed
-          // onDonePress: () {
-          //   // Handle the action when the user taps the "Done" button
-          //   // You can navigate to the next page or perform any other action here
-          // },
+          onDonePress: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LoginPage(),
+              ),
+            );
+            // Handle the action when the user taps the "Done" button
+            // You can navigate to the next page or perform any other action here
+          },
         ),
       ),
     );
