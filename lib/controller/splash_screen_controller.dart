@@ -6,6 +6,7 @@ import 'package:netflix_uiapp/pages/slidepage2.dart';
 import 'package:onboarding/onboarding.dart';
 
 class SplashScreenController extends GetxController {
+  //  Size screenSize = MediaQuery.of(context).size;
   late Material materialButton;
   late int index;
   final onboardingPagesList = [
@@ -168,7 +169,6 @@ class SplashScreenController extends GetxController {
               height: 30,
             ),
             Align(
-             // alignment: Alignment.centerLeft,
               child: Text(
                 'Join today,cancel anytime',
                 style: pageInfoStyle,
@@ -179,11 +179,40 @@ class SplashScreenController extends GetxController {
         ),
       ),
     ),
+    // SizedBox(
+    //   width: 10,
+    // ),
+    PageModel(
+      widget: Stack(
+        children: [
+          Image.asset(
+            'assets/images/slidepage5.jpg',
+            // width: screenSize.width,
+            // height: screenSize.height,
+            fit: BoxFit.cover,
+          ),
+          Positioned(
+            bottom:
+                16, // Adjust the position of the text from the bottom as needed.
+            left:
+                16, // Adjust the position of the text from the left as needed.
+            child: Text(
+              'How do i watch??',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+      ),
+    ),
     // ),
   ];
   Material skipButton({void Function(int)? setIndex}) {
     return Material(
-     // borderRadius: defaultSkipButtonBorderRadius,
+      // borderRadius: defaultSkipButtonBorderRadius,
       color: defaultSkipButtonColor,
       child: InkWell(
         borderRadius: defaultSkipButtonBorderRadius,
