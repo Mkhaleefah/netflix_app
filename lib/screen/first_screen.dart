@@ -12,7 +12,7 @@ class FirstScreen extends StatelessWidget {
         backgroundColor: Colors.black,
         title: Center(
             child: Text(
-          "Who's Watching?",
+          "Who's Watchinggggg?",
           style: GoogleFonts.quicksand(
               color: Colors.white, fontWeight: FontWeight.w700),
         )),
