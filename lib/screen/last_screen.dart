@@ -11,14 +11,29 @@ class LastScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.grey[900],
         title: Text(
-          'For JudyS',
+          'For JudyS.',
           style: GoogleFonts.lato(
               color: Colors.white, fontWeight: FontWeight.bold),
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.cast)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.account_box))
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.cast,
+                color: Colors.white,
+              )),
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.search,
+                color: Colors.white,
+              )),
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.account_box,
+                color: Colors.white,
+              ))
         ],
         // leading: Text(
         //   'For JudyS',
@@ -31,22 +46,36 @@ class LastScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Chip(
-                // avatar: const Text('AB'),
-                label: const Text('Aaron Burr'),
-              ),
-              Chip(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
                 backgroundColor: Colors.black,
-                // avatar: const Text('AB'),
                 label: const Text(
                   'Aaron Burr',
                   style: TextStyle(color: Colors.white),
                 ),
               ),
               Chip(
-                // avatar: const Text('AB'),
-                label: const Text('Aaron Burr'),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                backgroundColor: Colors.black,
+                label: const Text(
+                  'Aaron Burr',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              Chip(
+                //iconTheme: IconThemeData(),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                backgroundColor: Colors.black,
+                label: const Text(
+                  'Aaron Burr',
+                  style: TextStyle(color: Colors.white),
+                ),
+                deleteIcon: Icon(
+                  Icons.arrow_drop_down,
+                  color: Colors.white,
+                ),
               ),
             ],
           )
