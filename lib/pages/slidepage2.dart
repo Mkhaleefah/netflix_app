@@ -78,9 +78,11 @@ class SlidePage2 extends StatelessWidget {
           SizedBox(height: 20),
           ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => LoginPage(),
-                ));
+                Get.to(()=>LoginPage());
+                // Navigator.of(context).push(MaterialPageRoute(
+                //   builder: (context) => LoginPage(),
+              //  )
+               // );
               },
               style: ElevatedButton.styleFrom(
                   minimumSize: Size(350, 50),

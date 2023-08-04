@@ -21,7 +21,8 @@ class LoginPage extends StatelessWidget {
             color: Colors.white,
           ),
           onPressed: () {
-            Navigator.pop(context);
+            Get.back();
+          //  Navigator.pop(context);
           },
         ),
         actions: [

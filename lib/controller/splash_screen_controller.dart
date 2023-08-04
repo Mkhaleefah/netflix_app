@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:netflix_uiapp/pages/login_page.dart';
 import 'package:netflix_uiapp/pages/slidepage1.dart';
 import 'package:netflix_uiapp/pages/slidepage2.dart';
+import 'package:netflix_uiapp/screen/last_screen.dart';
 import 'package:onboarding/onboarding.dart';
 
 class SplashScreenController extends GetxController {
- 
   late Material materialButton;
   late int index;
   final onboardingPagesList = [
@@ -19,13 +19,10 @@ class SplashScreenController extends GetxController {
           children: [
             Padding(
               padding: EdgeInsets.all(9),
-             
               child: Image.asset(
                 'assets/images/slidepage1.png',
               ),
             ),
-          
-
             Align(
               alignment: Alignment.centerLeft,
               child: Center(
@@ -61,7 +58,6 @@ class SplashScreenController extends GetxController {
                   color: Colors.white,
                   fontSize: 20,
                   fontStyle: FontStyle.normal),
-              
             ),
           ],
         ),
@@ -71,22 +67,15 @@ class SplashScreenController extends GetxController {
       widget: DecoratedBox(
         decoration: BoxDecoration(
           color: Colors.black,
-          
-          border: Border.all(
-             
-              ),
+          border: Border.all(),
         ),
-        child:
-           
-            Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
               padding: EdgeInsets.all(12),
-              
               child: Image.asset(
                 'assets/images/slidepage2.png',
-                
               ),
             ),
             Text(
@@ -101,7 +90,6 @@ class SplashScreenController extends GetxController {
               height: 30,
             ),
             Align(
-              
               child: Text(
                 'Save your data,watch offline on a\n      plane,train,or submarine...',
                 style: pageInfoStyle,
@@ -112,38 +100,30 @@ class SplashScreenController extends GetxController {
         ),
       ),
     ),
-  
+
     PageModel(
       widget: DecoratedBox(
         decoration: BoxDecoration(
           color: Colors.black,
-          border: Border.all(
-            
-          ),
+          border: Border.all(),
         ),
-        child:
-            
-            Column(
+        child: Column(
           children: [
             Padding(
               padding: EdgeInsets.all(12),
-              
               child: Image.asset(
                 'assets/images/sildepage3 .png',
-                
               ),
             ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 45.0),
               child: Align(
-                
                 child: Text(
                   'No Pesky contracts',
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
                       fontSize: 30),
-                 
                   textAlign: TextAlign.left,
                 ),
               ),
@@ -162,13 +142,13 @@ class SplashScreenController extends GetxController {
         ),
       ),
     ),
-    
+
     // PageModel(
     //   widget: Stack(
     //     children: [
     //       Image.asset(
     //         'assets/images/slidepage5.jpg',
-            
+
     //         fit: BoxFit.cover,
     //       ),
     //       Positioned(
@@ -188,8 +168,6 @@ class SplashScreenController extends GetxController {
     //     ],
     //   ),
     // ),
-
-    
   ];
   Material skipButton({void Function(int)? setIndex}) {
     return Material(
@@ -241,5 +219,24 @@ class SplashScreenController extends GetxController {
     materialButton = skipButton();
     // materialButton = LoginPage();
     index = 0;
+  }
+}
+
+class LoadingView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    Future.delayed(Duration(seconds: 1), () {
+      Get.off(() => LastScreen());
+    });
+
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        CircularProgressIndicator(
+          //  strokeWidth: 5,
+          color: Colors.red,
+        ),
+      ],
+    );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:netflix_uiapp/pages/login_page.dart';
@@ -144,12 +145,13 @@ class SlidePage1 extends StatelessWidget {
 
           // Customize the appearance of navigation buttons if needed
           onDonePress: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => LoginPage(),
-              ),
-            );
+            Get.to(()=>LoginPage());
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //     builder: (context) => LoginPage(),
+            //   ),
+            // );
             // Handle the action when the user taps the "Done" button
             // You can navigate to the next page or perform any other action here
           },

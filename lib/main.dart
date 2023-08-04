@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:netflix_uiapp/homepage.dart';
 import 'package:netflix_uiapp/pages/login_page.dart';
 import 'package:netflix_uiapp/pages/slidepage2.dart';
+import 'package:netflix_uiapp/screen/first_screen.dart';
 import 'package:netflix_uiapp/screen/last_screen.dart';
 
 void main() {
@@ -21,8 +22,8 @@ class MyApp extends StatelessWidget {
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LastScreen(),
-      //home: HomePage(),
+     // home: judyScreen(),
+      home: HomePage(),
       //  home: SlidePage2(),
       debugShowCheckedModeBanner: false,
     );
