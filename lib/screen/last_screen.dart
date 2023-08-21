@@ -75,7 +75,8 @@ class LastScreen extends StatelessWidget {
               label: 'Downloads',
               icon: Icon(Icons.downloading),
             ),
-          ]),
+          ]
+          ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(

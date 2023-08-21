@@ -8,6 +8,7 @@ import 'package:netflix_uiapp/screen/first_screen.dart';
 
 class LoginPage extends StatelessWidget {
   final LoginController loginController = Get.put(LoginController());
+  String name = '';
 
   @override
   Widget build(BuildContext context) {
@@ -57,28 +58,77 @@ class LoginPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TextField(
-              onChanged: loginController.email,
-              style: TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                labelText: 'Email or Phone number',
-                labelStyle: TextStyle(color: Colors.white),
-                filled: true,
-                fillColor: const Color.fromARGB(255, 130, 127, 127),
-                border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 0.0)),
-                focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 0.0)),
-                disabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 0.0)),
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 0.0)),
-                // decoration: InputDecoration(
-                //   labelText: 'Email or Password',
-                //   border: OutlineInputBorder(),
-                // ),
-              ),
-            ),
+            
+
+ Container(
+
+  decoration: BoxDecoration(
+
+    border: Border.all(color: Colors.grey),
+
+    borderRadius: BorderRadius.circular(8),
+
+  ),
+
+  child: TextFormField(
+
+    decoration: InputDecoration(
+ fillColor: const Color.fromARGB(255, 130, 127, 127),
+ filled: true,
+      border: InputBorder.none,
+
+      hintText: 'Enter your name',
+       hintStyle: TextStyle(color: Colors.white),
+
+      contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+
+      labelText: 'Name', // Add label text here
+
+       labelStyle: TextStyle(color: Colors.white),
+
+    ),
+
+    validator: (value) {
+
+      if (value!.isEmpty) {
+
+        return 'Please enter your name';
+
+      }
+
+      return null;
+
+    },
+
+    onSaved: (value) {
+
+      name = value!;
+
+    },
+
+  ),
+
+),
+            // TextFormField(
+            //   autovalidateMode: AutovalidateMode.always,
+            //   onChanged: loginController.email,
+            //   style: TextStyle(color: Colors.white),
+            //   decoration: InputDecoration(
+            //     labelText: 'Email or Phone number',
+            //     labelStyle: TextStyle(color: Colors.white),
+            //     filled: true,
+            //     fillColor: const Color.fromARGB(255, 130, 127, 127),
+            //     border: OutlineInputBorder(
+            //         borderSide: BorderSide(color: Colors.grey, width: 0.0)),
+            //     focusedBorder: OutlineInputBorder(
+            //         borderSide: BorderSide(color: Colors.grey, width: 0.0)),
+            //     disabledBorder: OutlineInputBorder(
+            //         borderSide: BorderSide(color: Colors.grey, width: 0.0)),
+            //     enabledBorder: OutlineInputBorder(
+            //         borderSide: BorderSide(color: Colors.grey, width: 0.0)),
+               
+            //   ),
+            // ),
             SizedBox(height: 16),
             Obx(() {
               return TextField(

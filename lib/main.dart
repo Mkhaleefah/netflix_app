@@ -3,8 +3,11 @@ import 'package:get/get.dart';
 import 'package:netflix_uiapp/homepage.dart';
 import 'package:netflix_uiapp/pages/login_page.dart';
 import 'package:netflix_uiapp/pages/slidepage2.dart';
+import 'package:netflix_uiapp/screen/bmi/bmi_screen.dart';
 import 'package:netflix_uiapp/screen/first_screen.dart';
 import 'package:netflix_uiapp/screen/last_screen.dart';
+import 'package:netflix_uiapp/screen/recreateui/WeatherPage/Weather_page.dart';
+import 'package:netflix_uiapp/screen/recreateui/recreate_ui.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,9 +26,12 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
      // home: judyScreen(),
-      home: HomePage(),
+     // home: HomePage(),
       //  home: SlidePage2(),
       debugShowCheckedModeBanner: false,
+    //  home: RecreateUi(),
+     // home: BmiScreen(),
+     home: WeatherPage(),
     );
   }
 }
